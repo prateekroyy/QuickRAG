@@ -49,6 +49,15 @@ if mode =="web":
   docs = loader.load()
   rag_chain = process_documents(docs)
 
+elif mode == "pdf":
+  pdf_path = input("Enter File path: ").strip()
+  loader= PyPDFLoader(pdf_path)
+  docs = loader.load()
+  rag_chain = process_documents(docs)
+
+else:
+  raise ValueError("Invalid Option. Please choose from PDF/Web")
+
 #Question loop
 while True:
   question = input("Enter your question: ")
