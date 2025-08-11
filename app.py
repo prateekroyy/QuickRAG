@@ -11,7 +11,7 @@ from langchain_groq import ChatGroq
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+os.environ["GROQ_API_KEY"]= getpass.getpass("Enter your key: ")
 
 def process_documents(docs):
   #split docs
